@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function fn(n) {
+        //判断是否是数字类型
+
+        if (isNaN(n)) {
+          return []
+        }
+        //random生成的随机数
+        var random
+        //arr由随机数组成的一个数组
+        var arr = []
+        for (var i = 0; i < n; i++) {
+          random = Math.floor(Math.random() * 5 + 2)
+          //判断数组里是否有重复的值
+          console.log(random)
+
+          if (isArr(random, arr)) {
+            i--
+          } else {
+            arr.push(random)
+          }
+        }
+        return arr
+      }
+
+      console.log(fn(5))
+      //   [3,3,6]
+      function isArr(elem, arr) {
+        for (var j = 0; j < arr.length; j++) {
+          if (arr[j] == elem) {
+            return true
+          }
+        }
+        return false
+      }
+    </script>
+  </body>
+</html>
